@@ -36,7 +36,7 @@ def generate_dictionary(file):
         priority_queue.put(parent_node)
 
     root_node = priority_queue.get()
-    return root_node, symbols
+    return root_node
 
 def build_huffman_codes(node, current_code=""):
     huffman_codes = {}
@@ -124,7 +124,7 @@ def save_decoded_text(decoded_text, filename):
 def main():
     in_text = read_input("input.txt")
 
-    huffman_tree, huffman_dictionary = generate_dictionary(in_text)
+    huffman_tree = generate_dictionary(in_text)
     huffman_codes = build_huffman_codes(huffman_tree)
     encoded_text = encode_text(in_text, huffman_codes)
     
