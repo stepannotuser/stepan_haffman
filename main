@@ -1,8 +1,6 @@
 from logging import root
 from queue import PriorityQueue
-import pickle
 import struct
-import difflib
 import filecmp
 
 class Node:
@@ -49,7 +47,7 @@ def build_huffman_codes(node, current_code=""):
     return huffman_codes
 
 def read_input(filename):
-    code_txt = open("input.txt", "rb")   
+    code_txt = open(filename, "rb")   
     temp = code_txt.read()
     code_txt.close()
     return temp
